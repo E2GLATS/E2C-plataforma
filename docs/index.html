@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E2C Token</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">E2C Token</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#system">Sistema E2C</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Auth Modal -->
+    <!-- <div class="auth-modal">
+      <div
+        class="modal fade"
+        id="signUpModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="signUpModalLabel"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="signUpModalLabel">Cadastro</h4>
+            </div>
+            <form action="javascript:createUser()">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="name">Nome:</label>
+                  <input required type="name" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="wallet">Carteira:</label>
+                  <input
+                    required
+                    type="wallet"
+                    class="form-control"
+                    id="wallet"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    required
+                    type="email"
+                    class="form-control"
+                    id="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Senha:</label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    id="password"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Fechar
+                  </button>
+                  <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="loginModalLabel"
+      >
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="loginModalLabel">Entrar</h4>
+            </div>
+            <form action="javascript:login()">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    required
+                    type="email"
+                    class="form-control"
+                    id="emailLogin"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Senha:</label>
+                  <input
+                    required
+                    type="password"
+                    class="form-control"
+                    id="passwordLogin"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Fechar
+                  </button>
+                  <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="text-center" id="about">
+      <div class="container">
+        <h2>E2C Token</h2>
+      </div>
+    </div>
+
+    <div id="loading" class="text-center" style="margin: 200px auto 300px;">
+      <h4>Carregando...</h4>
+      <p>
+        Pode levar alguns segundos devido ao tempo de processamento da rede
+        Blockchain
+      </p>
+    </div>
+
+    <div class="container" id="system">
+
+      <div id="tabs">
+        <div class="text-center">
+          <h2>Sistema de Interação E2CToken</h2>
+          <p>
+            1 - Use uma carteira com Ether (aconselhamos a
+            <a href="https://metamask.io/">MetaMask</a>)
+          </p>
+          <p>2 - Transfira tokens como reconhecimento</p>
+          <p>3 - Cole o link do motivo do envio</p>
+        </div>
+
+        <ul class="nav nav-tabs nav-justified" style="text-align: left;">
+          <li>
+            <a href="#first" data-toggle="tab" id="first_tab"
+            >Sua Carteira</a
+            >
+          </li>
+          <li class="active">
+            <a href="#second" data-toggle="tab" id="second_tab"
+              >Enviar E2C Tokens</a
+            >
+          </li>
+          <li>
+            <a href="#third" data-toggle="tab" id="third_tab">Verificar</a>
+          </li>
+        </ul>
+
+        <!-- Tab 1 -->
+        <div class="tab-content">
+          <div id="first" class="tab-pane fade in">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Sua Wallet</h3>
+              </div>
+              <div class="panel-body">
+                <h4>Saldo</h4>
+                <br />
+                <strong>Saldo Atual</strong>:
+                <span id="TTBalance"></span> E2C<br /><br />
+                <strong>Total de entradas como Reconhecimento</strong>:
+                <span id="recognitionFlow"></span> E2C<br /><br />
+                <strong>Total de entradas como Transferência</strong>:
+                <span id="transferFlow"></span> E2C<br /><br />
+
+                <h4>Gerar um Reconhecimento (Transferir)</h4>
+                <label style="margin-top: 2%;"
+                  >Endereço da Carteira de Destino</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="TTTransferAddress"
+                />
+                <label style="margin-top: 2%;"
+                  >Quantidade de E2C (apenas números)</label
+                >
+                <input type="text" class="form-control" id="TTTransferAmount" />
+                <div style="display: grid; margin-top: 4%;">
+                  <button
+                    class="btn btn-primary"
+                    id="transferButton"
+                    type="button"
+                  >
+                    Transferir E2C
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- <a class="btn btn-primary btn-lg" onclick="$('#second_tab').trigger('click')">Second</a>
+              <a class="btn btn-primary btn-lg" onclick="$('#third_tab').trigger('click')">Third</a> -->
+          </div>
+
+          <!-- Tab 2 -->
+          <div id="second" class="tab-pane fade in active">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  Emita tokens E2C "Reconhecendo" o "Link"!
+                </h3>
+              </div>
+              <div class="whitelist panel-body">
+                <h4>Emitir Tokens</h4>
+                <div>
+                  <p>Para emitir tokens você precisa de uma carteira da rede Ethereum.</p>
+                  <p>
+                    Aconselhamos a utilização da
+                    <a href="https://metamask.io/">MetaMask</a>
+                    você pode
+                    <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
+                      instalar a extensão
+                    </a>
+                    em seu Chrome.
+                  </p>
+                  <p>
+                    Você precisará de uma quantidade pequena de Ether em sua
+                    carteira para pagar os custos das transações
+                  </p>
+                </div>
+                <label>Endereço da carteira de destino</label>
+                <input type="text" class="form-control" id="address" />
+                <label style="margin-top: 2%;">Quantidade de E2C (apenas números)</label
+                >
+                <input type="text" class="form-control" id="amount" />
+
+                <label style="margin-top: 2%;">Link</label>
+                <input type="text" class="form-control" id="link" />
+                <div style="display: grid; margin-top: 4%;">
+                  <input
+                    class="btn btn-primary"
+                    type="button"
+                    id="mint"
+                    value="Emitir E2C"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div id="third" class="tab-pane fade in">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Consultas</h3>
+              </div>
+              <div class="actions panel-body">
+                <h4>Consultar Conta</h4>
+                <label style="margin-top: 2%;">Endereço da Carteira</label>
+                <div style="display: flex;">
+                  <input
+                    type="text"
+                    style="margin-right: 5%;"
+                    class="form-control"
+                    id="checkaccount"
+                    placeholder="Conta"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-primary"
+                    id="checkAccount"
+                    value="Verificar E2C"
+                  />
+                </div>
+                <label style="margin-top: 2%;">Saldo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="checkbalance"
+                  placeholder="Saldo"
+                  readonly
+                />
+                <label style="margin-top: 2%;">
+                  Entradas de Reconhecimento
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="checkRecognitionFlow"
+                  placeholder="Fluxo"
+                  readonly
+                />
+                <label style="margin-top: 2%;">
+                  Entradas via Transferência
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="checkTransferFlow"
+                  placeholder="Fluxo"
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <h2>E2CToken</h2>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/truffle-contract.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
